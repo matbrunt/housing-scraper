@@ -1,0 +1,11 @@
+pandas
+pandas-gbq
+numpy
+scikit-learn
+scipy
+psycopg2
+awscli
+boto3
+beautifulsoup4
+lxml
+html5lib

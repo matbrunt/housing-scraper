@@ -1,0 +1,20 @@
+version: '3'
+services:
+  explore:
+    build:
+      context: ./docker/explore
+      dockerfile: ./explore.dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./src:/home/jovyan/work
+    working_dir: /home/jovyan/work/notebooks
+    command: start-notebook.sh --NotebookApp.token=''
+
+  process:
+    build:
+      context: ./docker/process
+      dockerfile: ./process.dockerfile
+    volumes:
+      - ./src:/usr/src/app
+    working_dir: /usr/src/app/scripts
